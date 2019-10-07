@@ -54,7 +54,7 @@ function servo1()
     if (this.readyState == 4 && this.status == 200) {
     }
   };
-  xhttp1.open("GET", "http://raspberrypi:8181/set_servo1?speed=" + slider1.value, true);
+  xhttp1.open("GET", "http://192.168.0.206:8181/set_servo1?speed=" + slider1.value, true);
   xhttp1.send();
 }
 </script>
@@ -72,7 +72,7 @@ function servo2()
     if (this.readyState == 4 && this.status == 200) {
     }
   };
-  xhttp2.open("GET", "http://raspberrypi:8181/set_servo2?speed=" + slider2.value, true);
+  xhttp2.open("GET", "http://192.168.0.206:8181/set_servo2?speed=" + slider2.value, true);
   xhttp2.send();
 }
 </script>
@@ -90,7 +90,7 @@ function servo3()
     if (this.readyState == 4 && this.status == 200) {
     }
   };
-  xhttp3.open("GET", "http://raspberrypi:8181/set_servo3?speed=" + slider3.value, true);
+  xhttp3.open("GET", "http://192.168.0.206:8181/set_servo3?speed=" + slider3.value, true);
   xhttp3.send();
 }
 </script>
@@ -108,7 +108,7 @@ function servo4()
     if (this.readyState == 4 && this.status == 200) {
     }
   };
-  xhttp4.open("GET", "http://raspberrypi:8181/set_servo4?speed=" + slider4.value, true);
+  xhttp4.open("GET", "http://192.168.0.206:8181/set_servo4?speed=" + slider4.value, true);
   xhttp4.send();
 }
 </script>
@@ -126,7 +126,7 @@ function servo5()
     if (this.readyState == 4 && this.status == 200) {
     }
   };
-  xhttp5.open("GET", "http://raspberrypi:8181/set_servo5?speed=" + slider5.value, true);
+  xhttp5.open("GET", "http://192.168.0.206:8181/set_servo5?speed=" + slider5.value, true);
   xhttp5.send();
 }
 </script>
@@ -144,7 +144,7 @@ function servo6()
     if (this.readyState == 4 && this.status == 200) {
     }
   };
-  xhttp6.open("GET", "http://raspberrypi:8181/set_servo6?speed=" + slider6.value, true);
+  xhttp6.open("GET", "http://192.168.0.206:8181/set_servo6?speed=" + slider6.value, true);
   xhttp6.send();
 }
 </script>

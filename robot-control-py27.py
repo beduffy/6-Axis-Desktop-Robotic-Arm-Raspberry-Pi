@@ -8,7 +8,6 @@ import time
 import Adafruit_PCA9685
 
 # Initialise the PCA9685 using the default address (0x40).
-#PCA9685_pwm = Adafruit_PCA9685.PCA9685(busnum=1)
 PCA9685_pwm = Adafruit_PCA9685.PCA9685()
 
 # Alternatively specify a different address and/or bus:
@@ -33,42 +32,42 @@ def web_interface():
 @app.route("/set_servo1")  
 def set_servo1():  
   speed = request.args.get("speed")
-  print("Received " + str(speed))
+  print "Received " + str(speed)
   PCA9685_pwm.set_pwm(0, 0, int(speed))
   return "Received " + str(speed)   
   
 @app.route("/set_servo2")  
 def set_servo2():  
   speed = request.args.get("speed")
-  print("Received " + str(speed))
+  print "Received " + str(speed)
   PCA9685_pwm.set_pwm(1, 0, int(speed))  
   return "Received " + str(speed)  
 
 @app.route("/set_servo3")  
 def set_servo3():  
   speed = request.args.get("speed")
-  print("Received " + str(speed))
+  print "Received " + str(speed)
   PCA9685_pwm.set_pwm(2, 0, int(speed))  
   return "Received " + str(speed) 
 
 @app.route("/set_servo4")  
 def set_servo4():  
   speed = request.args.get("speed")
-  print("Received " + str(speed))
+  print "Received " + str(speed)
   PCA9685_pwm.set_pwm(3, 0, int(speed))  
   return "Received " + str(speed) 
  
 @app.route("/set_servo5")  
 def set_servo5():  
   speed = request.args.get("speed")
-  print("Received " + str(speed))
+  print "Received " + str(speed)
   PCA9685_pwm.set_pwm(4, 0, int(speed))  
   return "Received " + str(speed) 
 
 @app.route("/set_servo6")  
 def set_servo6():  
   speed = request.args.get("speed")
-  print("Received " + str(speed))
+  print "Received " + str(speed)
   PCA9685_pwm.set_pwm(5, 0, int(speed))  
   return "Received " + str(speed)   
   

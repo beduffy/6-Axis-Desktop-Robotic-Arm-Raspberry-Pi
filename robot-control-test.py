@@ -21,7 +21,9 @@ PCA9685_pwm.set_pwm_freq(60)
 servo_min = 150  # Min pulse length out of 4096
 servo_max = 600  # Max pulse length out of 4096
 
-app = Flask(__name__)
+PCA9685_pwm.set_pwm(0, 0, 350)
+
+'''app = Flask(__name__)
 
 @app.route("/")
 def web_interface():
@@ -74,3 +76,4 @@ def set_servo6():
   
 if __name__ == "__main__":
     app.run(host='0.0.0.0', port=8181, debug=True)
+'''
