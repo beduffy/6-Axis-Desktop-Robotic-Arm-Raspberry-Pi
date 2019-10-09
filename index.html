@@ -1,45 +1,94 @@
 <!DOCTYPE html>
 <html>
+<title>Sainsmart control room</title>
+
 <body>
 
 <h1>Robot Arm Web Browser Control</h1>
 <p>Drag the slider to move the servo.</p>
 
 <div id="servo1">
-  <p>Servo 1</p>
-  <input type="range" min="150" max="600" value="0" id="range1" oninput="servo1()">
+  <p>Servo 1 (base)</p>
+  <input type="range" min="80" max="550" value="300" id="range1" oninput="servo1()">
   <p>Value servo1: <span id="range1_value"></span></p>
 </div>
 
 <div id="servo2">
-  <p>Servo 2</p>
-  <input type="range" min="150" max="600" value="0" id="range2" oninput="servo2()">
+  <p>Servo 2 (shoulder)</p>
+  <input type="range" min="150" max="600" value="450" id="range2" oninput="servo2()">
   <p>Value servo2: <span id="range2_value"></span></p>  
 </div>
 
 <div id="servo3">
-  <p>Servo 3</p>
-  <input type="range" min="150" max="600" value="0" id="range3" oninput="servo3()">
-  <p>Value servo1: <span id="range3_value"></span></p>
+  <p>Servo 3 (elbow)</p>
+  <input type="range" min="150" max="600" value="300" id="range3" oninput="servo3()">
+  <p>Value servo3: <span id="range3_value"></span></p>
 </div>
 
 <div id="servo4">
-  <p>Servo 4</p>
-  <input type="range" min="150" max="600" value="0" id="range4" oninput="servo4()">
-  <p>Value servo2: <span id="range4_value"></span></p>  
+  <p>Servo 4 (arm rotate)</p>
+  <input type="range" min="150" max="600" value="300" id="range4" oninput="servo4()">
+  <p>Value servo4: <span id="range4_value"></span></p>  
 </div>
 
 <div id="servo5">
-  <p>Servo 5</p>
-  <input type="range" min="150" max="600" value="0" id="range5" oninput="servo5()">
-  <p>Value servo1: <span id="range5_value"></span></p>
+  <p>Servo 5 (wrist pitch)</p>
+  <input type="range" min="150" max="600" value="300" id="range5" oninput="servo5()">
+  <p>Value servo5: <span id="range5_value"></span></p>
 </div>
 
 <div id="servo6">
-  <p>Servo 6</p>
-  <input type="range" min="150" max="600" value="0" id="range6" oninput="servo6()">
-  <p>Value servo2: <span id="range6_value"></span></p>  
+  <p>Servo 6 (wrist rotate)</p>
+  <input type="range" min="150" max="600" value="300" id="range6" oninput="servo6()">
+  <p>Value servo6: <span id="range6_value"></span></p>  
 </div>
+
+<div id="servo7">
+  <p>Servo 7 (gripper)</p>
+  <input type="range" min="150" max="600" value="300" id="range7" oninput="servo7()">
+  <p>Value servo7: <span id="range7_value"></span></p>  
+</div>
+
+
+<hr>
+
+<div id="servo1_angle">
+  <p>Servo 1 (base) angle</p>
+  <input type="range" min="0" max="180" value="90" id="range1_angle" oninput="servo1_angle()">
+  <p>Value servo1: <span id="range1_angle_value"></span></p>
+</div>
+
+<div id="servo2_angle">
+  <p>Servo 2 angle</p>
+  <input type="range" min="0" max="180" value="90" id="range2_angle" oninput="servo2_angle()">
+  <p>Value servo2: <span id="range2_angle_value"></span></p>
+</div>
+
+<div id="servo1_angle">
+  <p>Servo 3 angle</p>
+  <input type="range" min="0" max="180" value="90" id="range3_angle" oninput="servo3_angle()">
+  <p>Value servo3: <span id="range3_angle_value"></span></p>
+</div>
+
+<div id="servo1_angle">
+  <p>Servo 4 angle</p>
+  <input type="range" min="0" max="180" value="90" id="range4_angle" oninput="servo4_angle()">
+  <p>Value servo4: <span id="range4_angle_value"></span></p>
+</div>
+
+<div id="servo1_angle">
+  <p>Servo 5 angle</p>
+  <input type="range" min="0" max="180" value="90" id="range5_angle" oninput="servo5_angle()">
+  <p>Value servo5: <span id="range5_angle_value"></span></p>
+</div>
+
+<div id="servo1_angle">
+  <p>Servo 6 angle</p>
+  <input type="range" min="0" max="180" value="90" id="range6_angle" oninput="servo6_angle()">
+  <p>Value servo6: <span id="range6_angle_value"></span></p>
+</div>
+
+
 
 <script>
 var slider1 = document.getElementById("range1");
@@ -148,6 +197,64 @@ function servo6()
   xhttp6.send();
 }
 </script>
+
+<script>
+var slider7 = document.getElementById("range7");
+var output7 = document.getElementById("range7_value");
+output7.innerHTML = slider7.value;
+
+function servo7()
+{
+  output7.innerHTML = slider7.value;
+  var xhttp7 = new XMLHttpRequest();
+  xhttp7.onreadystatechange = function servo7() {
+    if (this.readyState == 4 && this.status == 200) {
+    }
+  };
+  xhttp7.open("GET", "http://192.168.0.206:8181/set_servo7?speed=" + slider7.value, true);
+  xhttp7.send();
+}
+</script>
+
+<script
+  src="https://code.jquery.com/jquery-3.4.1.js"
+  integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
+  crossorigin="anonymous"></script>
+
+<script>
+
+  for (var i = 0; i < 10; i++) {}
+  for (var i = 1; i < 7; i++) {}
+
+  for (var i = 1; i < 7; i++) 
+  {
+
+      let slider_specific_angle = document.getElementById("range" + i + "_angle");
+      let output_specific_angle = document.getElementById("range" + i + "_angle_value");
+      output_specific_angle.innerHTML = slider_specific_angle.value;
+
+      //window['servo' + i + '_angle'] = function()
+      //{
+        //output_specific_angle.innerHTML = slider_specific_angle.value;
+        //var xhttp1 = new XMLHttpRequest();
+        //xhttp1.onreadystatechange = function() {
+          //xhttp1.onreadystatechange = function servo1_angle() {
+
+            //}
+          //xhttp1.onreadystatechange = //window['servo' + i + '_angle']
+           //if (this.readyState == 4 && this.status == 200) {
+           //}
+        //}
+        
+        //xhttp1.open("GET", "http://192.168.0.206:8181/set_servo" + i + "_angle?angle=" + slider_specific_angle.value, true);
+        //xhttp1.send();
+      //}
+      //}
+  }
+</script>
+
+
+
 
 </body>
 </html>
